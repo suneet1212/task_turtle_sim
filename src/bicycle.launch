@@ -1,0 +1,21 @@
+<launch>
+    <!-- Open a turtlesim node -->
+    <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+
+    <!-- Spawn a new turtle at x = 0.0, y = 5.4, theta = 0.0 and name it turtle2  -->
+    <node pkg="rosservice" type="rosservice" name="call_turtle_sim" args= "call /spawn 0.0 5.4 0.0 &quot;turtle2&quot;"/>
+
+    <!-- Run teleop node for turtle1. The same terminal window to be used as the controlling window -->
+    <node pkg="turtlesim" name= "turtlesim_teleop_node" type="turtle_teleop_key" />
+
+    <!-- To make the path followed by turtle1 is not visible -->
+    <node pkg="rosservice" type="rosservice" name="turtle_sim" args= "call /turtle1/set_pen 0 0 0 0 1"/>
+    
+    <!-- To initialize the parameters for the bicycle model -->
+    <group ns="bicycle">
+        <rosparam command="load" file="$(find task_turtle_sim)/config/parameters_b.yaml" />
+    </group>
+
+    <!-- Running the node -->
+    <node name="task" pkg="task_turtle_sim" type="task_bicycle" output="screen" />
+</launch>

@@ -1,0 +1,12 @@
+N: 8
+T: 0.05
+obs_x: 100
+obs_y: 100
+x_curr: 0
+y_curr: 0
+theta_curr: 0
+target_x: 9.5
+target_y: 9.5
+target_theta: 0.0
+L: 1
+done: 0
