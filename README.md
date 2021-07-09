@@ -84,3 +84,18 @@ N = MPC Horizon Length
 L = biycle model length
 
 &Delta;T is the time period for mpc
+
+## Target files:
+Run this in a new terminal.(after starting the launch file)
+### Unicycle:
+```
+rosrun task_turtle_sim target
+```
+
+### Bicycle:
+```
+rosrun task_turtle_sim target_bicycle
+```
+
+Sometimes there is an error when we run the launch files : "[call_turtle_sim-3] process has died [pid 2832, exit code 2]".
+Just do ctrl+c and run again.
