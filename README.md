@@ -86,6 +86,8 @@ L = biycle model length
 
 &Delta;T is the time period for mpc
 
+Note: Parameters for this are not tuned fully. It doesn't run properly for multple targets.
+
 
 Sometimes there is an error when we run the launch files : "[call_turtle_sim-3] process has died [pid 2832, exit code 2]".
 Just do ctrl+c and run again.
